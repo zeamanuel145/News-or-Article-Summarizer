@@ -1,4 +1,6 @@
 import tkinter as tk #graphic user interface
+
+import analysis
 import nltk #for natural language processor
 from textblob import TextBlob #for tenement analysis
 
@@ -27,4 +29,11 @@ print(f'Summary: {article.summary}')
 
 
 
+#from now on we gonna built a user graphic page
+# the next part is to analysis the article meaning the article might be positive or negative and tell me
+
+
+analysis = TextBlob(article.text)
+print(analysis.polarity)
+print(f'sentiment: {"positive" if analysis.polarity > 0 else"negative" if analysis.polarity <0 else "natural"}')
 
